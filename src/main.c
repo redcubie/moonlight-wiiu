@@ -316,7 +316,7 @@ int main(int argc, char* argv[]) {
 
         Font_Printf(8, 58, "Moonlight Wii U %s (Connected to %s)\n"
                            SCREEN_BAR
-                           "Press \ue000 to stream\nPress \ue001 to pair\n", VERSION_STRING, config.address);
+                           "Press \ue000 to stream\nPress \ue002 to pair\n\nPress \ue001 to go back\n", VERSION_STRING, cur_address);
 
         if (is_error) {
           Font_SetColor(255, 0, 0, 255);
@@ -332,10 +332,15 @@ int main(int argc, char* argv[]) {
         if (btns & VPAD_BUTTON_A) {
           message_buffer[0] = '\0';
           state = STATE_START_STREAM;
-        } else if (btns & VPAD_BUTTON_B) {
+        } else if (btns & VPAD_BUTTON_X) {
           message_buffer[0] = '\0';
           state = STATE_PAIRING;
         }
+        else if (btns & VPAD_BUTTON_B) {
+          message_buffer[0] = '\0';
+          state = STATE_DISCONNECTED;
+        }
+        
         break;
       }
       case STATE_PAIRING: {
