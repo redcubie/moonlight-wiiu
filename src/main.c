@@ -230,7 +230,7 @@ int main(int argc, char* argv[]) {
           Font_SetColor(0, 255, 0, 255);
         }
         Font_SetSize(50);
-        Font_Print(8, 400, message_buffer);
+        Font_Print(8, 700, message_buffer);
 
         Font_Draw_TVDRC();
 
@@ -325,7 +325,7 @@ int main(int argc, char* argv[]) {
           Font_SetColor(0, 255, 0, 255);
         }
         Font_SetSize(50);
-        Font_Print(8, 400, message_buffer);
+        Font_Print(8, 500, message_buffer);
         Font_Draw_TVDRC();
 
         uint32_t btns = wiiu_input_buttons_triggered();
